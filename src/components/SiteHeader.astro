@@ -1,0 +1,22 @@
+---
+import styles from './SiteHeader.module.css';
+import { siteContent } from '../data/siteContent';
+const links = [
+  { href: '#receita', label: 'Receita' },
+  { href: '#tutoriais', label: 'Tutoriais' },
+  { href: '#dicas', label: 'Dicas' },
+  { href: '#seguranca', label: 'Segurança' },
+];
+---
+<header class={styles.header}>
+  <div class:list={['container', styles.inner]}>
+    <a class={styles.brand} href="#inicio" aria-label={`${siteContent.brand.name}, início`}>
+      <span class={styles.brandMark} aria-hidden="true"><span></span><i></i></span>
+      <span>super<span class={styles.brandAccent}>bolhas</span></span>
+    </a>
+    <nav class={styles.nav} aria-label="Navegação principal">
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+    <a class:list={['button', styles.cta]} href="#receita">Ver receita <span aria-hidden="true">↓</span></a>
+  </div>
+</header>

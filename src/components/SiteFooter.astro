@@ -1,0 +1,12 @@
+---
+import styles from './SiteFooter.module.css';
+import { siteContent } from '../data/siteContent';
+const links = [{ href: '#receita', label: 'Receita' }, { href: '#tutoriais', label: 'Tutoriais' }, { href: '#dicas', label: 'Dicas' }, { href: '#seguranca', label: 'Segurança' }];
+---
+<footer class={styles.footer}>
+  <div class:list={['container', styles.main]}>
+    <div><a class={styles.brand} href="#inicio">{siteContent.brand.name}<span aria-hidden="true">○</span></a><p>{siteContent.brand.tagline}</p></div>
+    <nav aria-label="Links do rodapé" class={styles.links}>{links.map((link) => <a href={link.href}>{link.label}</a>)}{siteContent.contact && <a href={siteContent.contact.whatsappUrl} target="_blank" rel="noopener noreferrer">Fale com a gente</a>}</nav>
+  </div>
+  <div class:list={['container', styles.bottom]}><span>© {new Date().getFullYear()} Super Bolhas</span><a href="#inicio">Voltar ao início ↑</a></div>
+</footer>

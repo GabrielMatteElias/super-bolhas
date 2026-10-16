@@ -1,0 +1,10 @@
+---
+import styles from './SafetySection.module.css';
+import { siteContent } from '../data/siteContent';
+---
+<section class={styles.section} id="seguranca" aria-labelledby="safety-title">
+  <div class:list={['container', styles.panel]}>
+    <div class={styles.heading}><span class={styles.mark} aria-hidden="true">✓</span><div><p class="section-kicker">Combinados para todo mundo curtir</p><h2 id="safety-title">Brincar é mágico. Cuidar também!</h2><p>Com um adulto por perto, todo mundo aproveita melhor.</p></div></div>
+    <ul class={styles.list}>{siteContent.safety.map((item) => <li><span aria-hidden="true">•</span>{item}</li>)}</ul>
+  </div>
+</section>

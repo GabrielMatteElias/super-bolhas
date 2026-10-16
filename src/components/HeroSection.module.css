@@ -1,0 +1,45 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--blue);
+  background-image: radial-gradient(circle at 16% 18%, rgb(255 255 255 / 15%) 0 2px, transparent 2.5px), radial-gradient(circle at 82% 27%, rgb(255 255 255 / 12%) 0 3px, transparent 3.5px), linear-gradient(135deg, #168cff, #2778eb 58%, #655de0);
+  background-size: 37px 37px, 59px 59px, auto;
+  color: var(--white);
+}
+.hero::before, .hero::after { position: absolute; z-index: -1; border: 2px solid rgb(255 255 255 / 22%); border-radius: 50%; content: ''; pointer-events: none; }
+.hero::before { top: -10rem; left: 43%; width: 22rem; height: 22rem; box-shadow: 0 0 0 1.5rem rgb(255 255 255 / 5%), inset 1rem 1rem 2rem rgb(255 255 255 / 15%); }
+.hero::after { right: -5rem; bottom: -11rem; width: 25rem; height: 25rem; box-shadow: inset 1rem 1rem 2rem rgb(255 255 255 / 12%); }
+.grid { position: relative; display: grid; min-height: 34rem; grid-template-columns: 1fr .9fr; align-items: center; gap: 1rem; padding-block: 2.2rem; }
+.copy { position: relative; z-index: 1; padding-block: 1rem; }
+.copy .section-kicker { display: inline-flex; max-width: 100%; margin-bottom: 1rem; padding: .5rem .85rem; transform: rotate(-1.5deg); border: 2px solid var(--ink); border-radius: 1rem .7rem 1.1rem .6rem; background: var(--mint); box-shadow: 3px 4px 0 var(--ink); color: var(--ink); font-size: .84rem; letter-spacing: 0; }
+.copy h1 { max-width: 41rem; margin: 0; color: var(--white); font-family: var(--font-display); font-size: clamp(3.1rem, 6.5vw, 5.9rem); line-height: .96; letter-spacing: -.07em; text-wrap: balance; text-shadow: 0 4px 0 rgb(20 86 192 / 35%); }
+.copy h1 span { color: var(--yellow); }
+.description { max-width: 31rem; margin: 1.2rem 0 0; color: var(--white); font-size: clamp(1.08rem, 1.6vw, 1.28rem); font-weight: 650; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: .85rem 1.25rem; margin-top: 1.5rem; }
+.secondary { display: inline-flex; min-height: 2.9rem; align-items: center; gap: .4rem; padding-inline: .3rem; color: var(--white); font-size: .97rem; font-weight: 850; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.quick { margin: 1.25rem 0 0; color: rgb(255 255 255 / 94%); font-size: .84rem; font-weight: 750; }
+.quick span { padding-inline: .35rem; color: var(--yellow); }
+.art { position: relative; display: grid; min-height: 27rem; place-items: center; }
+.wand { position: relative; width: min(112%, 31rem); overflow: visible; filter: drop-shadow(0 18px 12px rgb(15 49 110 / 22%)); animation: bubble-drift 7s ease-in-out infinite; }
+.caption { position: absolute; right: -1rem; bottom: 1.4rem; padding: .55rem .9rem; transform: rotate(3deg); border: 2px solid var(--ink); border-radius: .8rem .6rem 1rem .65rem; background: var(--pink); box-shadow: 3px 4px 0 var(--ink); color: var(--ink); font-family: var(--font-display); font-size: .79rem; font-weight: 900; }
+@keyframes bubble-drift { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-9px) rotate(1deg); } }
+@media (max-width: 760px) {
+  .grid { min-height: 0; grid-template-columns: 1fr; gap: 0; padding-block: 1.4rem .7rem; }
+  .copy { padding-block: .45rem 0; }
+  .copy .section-kicker { margin-bottom: .8rem; font-size: .75rem; }
+  .copy h1 { max-width: 34rem; font-size: clamp(2.9rem, 10.5vw, 4rem); }
+  .description { max-width: 31rem; margin-top: .75rem; font-size: 1.02rem; }
+  .actions { gap: .65rem .9rem; margin-top: 1rem; }
+  .quick { margin-top: .85rem; font-size: .77rem; }
+  .art { min-height: 12rem; margin-top: -.25rem; }
+  .wand { width: min(64vw, 15rem); }
+  .caption { right: 4%; bottom: .2rem; font-size: .68rem; }
+}
+@media (max-width: 360px) {
+  .grid { padding-top: 1rem; }
+  .copy h1 { font-size: 2.75rem; }
+  .art { min-height: 10rem; }
+  .wand { width: 57vw; }
+  .secondary { font-size: .88rem; }
+}

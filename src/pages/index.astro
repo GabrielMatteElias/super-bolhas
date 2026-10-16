@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroSection from '../components/HeroSection.astro';
+import RecipeSection from '../components/RecipeSection.astro';
+import TutorialSection from '../components/TutorialSection.astro';
+import TipsSection from '../components/TipsSection.astro';
+import SafetySection from '../components/SafetySection.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<BaseLayout>
+  <SiteHeader />
+  <main id="conteudo">
+    <HeroSection />
+    <RecipeSection />
+    <TutorialSection />
+    <TipsSection />
+    <SafetySection />
+  </main>
+  <SiteFooter />
+</BaseLayout>

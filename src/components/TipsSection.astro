@@ -1,0 +1,17 @@
+---
+import styles from './TipsSection.module.css';
+import { siteContent } from '../data/siteContent';
+---
+<section class={styles.section} id="dicas" aria-labelledby="tips-title">
+  <div class="container">
+    <p class="section-kicker">Pistas secretas para a próxima aventura</p>
+    <h2 class="section-heading" id="tips-title">Segredinhos para bolhas incríveis</h2>
+    <div class={styles.tips}>
+      {siteContent.tips.map((tip, index) => <article class={styles.tip}><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><div><h3>{tip.title}</h3><p>{tip.description}</p></div></article>)}
+    </div>
+    <div class={styles.troubleshooting}>
+      <div class={styles.troubleHead}><p class="section-kicker">Acontece com todo mundo</p><h3>Algo não saiu como esperado?</h3><p>Experimente estas ideias simples.</p></div>
+      <div class={styles.questions}>{siteContent.troubleshooting.map((item) => <details class={styles.detail}><summary>{item.title}</summary><p>{item.description}</p></details>)}</div>
+    </div>
+  </div>
+</section>

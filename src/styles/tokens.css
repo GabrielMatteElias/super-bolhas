@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light;
+  --blue: #168cff;
+  --blue-dark: #1456c0;
+  --cyan: #48d9f5;
+  --cyan-strong: #9ceeff;
+  --paper: #fff9df;
+  --pink: #ff70b7;
+  --purple: #9b72f2;
+  --orange: #ff9f43;
+  --mint: #7be7b5;
+  --yellow: #ffd93d;
+  --white: #fff;
+  --ink: #183153;
+  --muted: #3e5877;
+  --line: #d7e2ef;
+  --shadow: 0 12px 26px rgb(20 86 192 / 12%);
+  --radius-card: 1.5rem;
+  --radius-pill: 999px;
+  --page-width: 72rem;
+  --font-display: "Arial Rounded MT Bold", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
+}

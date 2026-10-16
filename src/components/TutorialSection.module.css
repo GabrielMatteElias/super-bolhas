@@ -1,0 +1,13 @@
+.section { position: relative; overflow: hidden; padding-block: clamp(3.3rem, 7vw, 5.2rem); background: #eee6ff; }
+.section::before { position: absolute; top: -7rem; right: 8%; width: 16rem; aspect-ratio: 1; border: 2px solid rgb(155 114 242 / 15%); border-radius: 50%; box-shadow: 0 0 0 1rem rgb(255 112 183 / 8%), 0 0 0 2rem rgb(72 217 245 / 8%); content: ''; }
+.section > div { position: relative; }
+.section .section-kicker { color: #7244d0; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.empty { display: flex; max-width: 58rem; min-height: 12rem; align-items: center; gap: 1.4rem; margin-top: 1.8rem; padding: 1.4rem 1.7rem; transform: rotate(-.35deg); border: 2px dashed #7244d0; border-radius: 2rem 1.2rem 2rem 1.4rem; background: #fff8ff; box-shadow: 6px 7px 0 rgb(155 114 242 / 18%); }
+.empty h3 { margin: 0; color: var(--ink); font-family: var(--font-display); font-size: 1.3rem; }.empty p { max-width: 42rem; margin: .35rem 0 0; color: var(--muted); font-size: 1rem; }
+.bubble { position: relative; display: grid; width: 6rem; height: 6rem; flex: 0 0 auto; place-items: center; border: 2px solid white; border-radius: 47% 53% 51% 49%; background: radial-gradient(circle at 33% 28%, white 0 8%, #c8f8ff 24%, #ffbce1 49%, #c4acff 76%, #8deaff 100%); box-shadow: inset -8px -10px 15px rgb(86 101 202 / 13%), 0 5px 0 #d6c4ff; animation: bubble-wiggle 6s ease-in-out infinite; }
+.bubble i { position: absolute; top: 1rem; left: 1.15rem; width: 1.35rem; height: .6rem; transform: rotate(-35deg); border-radius: 50%; background: white; }
+.bubble b { position: absolute; top: .62rem; right: 1rem; width: .45rem; height: .45rem; border-radius: 50%; background: white; }
+.bubble em { position: absolute; right: -.9rem; bottom: -.45rem; width: 1.8rem; height: 1.8rem; border: 2px solid white; border-radius: 50%; background: linear-gradient(145deg, #fff, #ff9ed3 75%); }
+@keyframes bubble-wiggle { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-6px) rotate(3deg); } }
+@media (max-width: 680px) { .empty { align-items: flex-start; gap: 1rem; margin-top: 1.2rem; padding: 1.15rem; }.bubble { width: 4rem; height: 4rem; }.bubble i { top: .7rem; left: .8rem; width: .9rem; height: .45rem; }.bubble em { right: -.65rem; bottom: -.25rem; width: 1.2rem; height: 1.2rem; }.grid { grid-template-columns: 1fr; } }

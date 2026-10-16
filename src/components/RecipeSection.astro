@@ -1,0 +1,26 @@
+---
+import styles from './RecipeSection.module.css';
+import { siteContent } from '../data/siteContent';
+---
+<section class={styles.section} id="receita" aria-labelledby="recipe-title">
+  <div class:list={['container', styles.content]}>
+  <div class={styles.heading}>
+    <div><p class="section-kicker">Receita simples, diversão sem pressa</p><h2 class="section-heading" id="recipe-title">{siteContent.recipe.title}</h2><p class="section-intro">{siteContent.recipe.intro}</p></div>
+    <p class={styles.timer}><span aria-hidden="true">30</span><span class={styles.timerText}>{siteContent.recipe.rest}</span></p>
+  </div>
+  <div class={styles.ingredients} aria-label="Ingredientes">
+    {siteContent.recipe.ingredients.map((item, index) => <article class:list={[styles.ingredient, styles[item.symbol]]}>
+      <span class={styles.number}>0{index + 1}</span><span class={styles.symbol} aria-hidden="true">
+        {item.symbol === 'water' && <svg viewBox="0 0 64 64" fill="none"><path d="M32 7C24 20 15 30 15 40a17 17 0 0 0 34 0C49 30 40 20 32 7Z" fill="#48D9F5" stroke="#183153" stroke-width="3"/><path d="M23 40c0 5 3 8 7 9" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>}
+        {item.symbol === 'soap' && <svg viewBox="0 0 64 64" fill="none"><path d="M23 18h19l4 8v28H18V26l5-8Z" fill="#FF70B7" stroke="#183153" stroke-width="3" stroke-linejoin="round"/><path d="M27 18v-6h14v6m-1-6h11v5H39" stroke="#183153" stroke-width="3" stroke-linecap="round"/><path d="M27 36h11" stroke="white" stroke-width="4" stroke-linecap="round"/><circle cx="45" cy="13" r="3" fill="#FFD93D"/></svg>}
+        {item.symbol === 'sugar' && <svg viewBox="0 0 64 64" fill="none"><path d="m13 37 8-16 29 14-8 16-29-14Z" fill="#FFD93D" stroke="#183153" stroke-width="3" stroke-linejoin="round"/><path d="m21 21 4-7 29 14-4 7" stroke="#183153" stroke-width="3" stroke-linejoin="round"/><path d="m27 27 3-6m5 10 3-6m5 10 3-6" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="14" cy="17" r="3" fill="#FF70B7"/><circle cx="49" cy="52" r="3" fill="#9B72F2"/></svg>}
+      </span>
+      <div><h3>{item.name}</h3><p class={styles.amount}>{item.amount}</p><p class={styles.detail}>{item.detail}</p></div>
+    </article>)}
+  </div>
+  <div class={styles.method}>
+    <div class={styles.methodHeading}><p class="section-kicker">Mão na massa</p><h3>É só seguir estes passos</h3></div>
+    <ol class={styles.steps}>{siteContent.recipe.steps.map((step) => <li><span>{step}</span></li>)}</ol>
+  </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+import styles from './VideoCard.module.css';
+import type { Tutorial } from '../data/siteContent';
+interface Props { tutorial: Tutorial; }
+const { tutorial } = Astro.props;
+const validVideo = tutorial.youtubeUrl && /^https:\/\/(www\.)?(youtube\.com\/watch\?v=[\w-]+|youtu\.be\/[\w-]+)([&?][^\s]*)?$/.test(tutorial.youtubeUrl);
+if (!validVideo) throw new Error(`Tutorial "${tutorial.title}" precisa de uma URL válida do YouTube.`);
+---
+<article class={styles.card}>
+  <a class={styles.media} href={tutorial.youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label={`Assistir: ${tutorial.title} no YouTube`}>
+    {tutorial.thumbnailUrl ? <img src={tutorial.thumbnailUrl} alt="" loading="lazy" decoding="async" /> : <span class={styles.fallback} aria-hidden="true"><i></i><b></b></span>}
+    <span class={styles.play} aria-hidden="true">▶</span>
+    {tutorial.duration && <span class={styles.duration}>{tutorial.duration}</span>}
+  </a>
+  <div class={styles.copy}><h3>{tutorial.title}</h3><p>{tutorial.description}</p></div>
+</article>

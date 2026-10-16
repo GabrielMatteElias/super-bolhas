@@ -1,0 +1,16 @@
+---
+import styles from './TutorialSection.module.css';
+import VideoCard from './VideoCard.astro';
+import { siteContent } from '../data/siteContent';
+const publishedTutorials = siteContent.tutorials.filter((tutorial) => tutorial.published && tutorial.youtubeUrl);
+---
+<section class={styles.section} id="tutoriais" aria-labelledby="tutorial-title">
+  <div class="container">
+    <p class="section-kicker">Quando quiser aprender mais</p>
+    <h2 class="section-heading" id="tutorial-title">Aprenda a criar bolhas incríveis</h2>
+    {publishedTutorials.length > 0 ? <div class={styles.grid}>{publishedTutorials.map((tutorial) => <VideoCard tutorial={tutorial} />)}</div> : <div class={styles.empty}>
+      <span class={styles.bubble} aria-hidden="true"><i></i><b></b><em></em></span>
+      <div><h3>Tem magia borbulhando por aí!</h3><p>{siteContent.tutorialEmpty}</p></div>
+    </div>}
+  </div>
+</section>
