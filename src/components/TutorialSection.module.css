@@ -1,13 +1,23 @@
 .section { position: relative; overflow: hidden; padding-block: clamp(3.3rem, 7vw, 5.2rem); background: #eee6ff; }
-.section::before { position: absolute; top: -7rem; right: 8%; width: 16rem; aspect-ratio: 1; border: 2px solid rgb(155 114 242 / 15%); border-radius: 50%; box-shadow: 0 0 0 1rem rgb(255 112 183 / 8%), 0 0 0 2rem rgb(72 217 245 / 8%); content: ''; }
+.section::before { position: absolute; top: -7rem; right: 8%; width: 16rem; aspect-ratio: 1; border: 2px solid rgb(155 114 242 / 15%); border-radius: 50%; box-shadow: 0 0 0 1rem rgb(255 112 183 / 8%), 0 0 0 2rem rgb(72 217 245 / 8%); content: ''; pointer-events: none; }
 .section > div { position: relative; }
 .section .section-kicker { color: #7244d0; }
-.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
-.empty { display: flex; max-width: 58rem; min-height: 12rem; align-items: center; gap: 1.4rem; margin-top: 1.8rem; padding: 1.4rem 1.7rem; transform: rotate(-.35deg); border: 2px dashed #7244d0; border-radius: 2rem 1.2rem 2rem 1.4rem; background: #fff8ff; box-shadow: 6px 7px 0 rgb(155 114 242 / 18%); }
-.empty h3 { margin: 0; color: var(--ink); font-family: var(--font-display); font-size: 1.3rem; }.empty p { max-width: 42rem; margin: .35rem 0 0; color: var(--muted); font-size: 1rem; }
-.bubble { position: relative; display: grid; width: 6rem; height: 6rem; flex: 0 0 auto; place-items: center; border: 2px solid white; border-radius: 47% 53% 51% 49%; background: radial-gradient(circle at 33% 28%, white 0 8%, #c8f8ff 24%, #ffbce1 49%, #c4acff 76%, #8deaff 100%); box-shadow: inset -8px -10px 15px rgb(86 101 202 / 13%), 0 5px 0 #d6c4ff; animation: bubble-wiggle 6s ease-in-out infinite; }
-.bubble i { position: absolute; top: 1rem; left: 1.15rem; width: 1.35rem; height: .6rem; transform: rotate(-35deg); border-radius: 50%; background: white; }
-.bubble b { position: absolute; top: .62rem; right: 1rem; width: .45rem; height: .45rem; border-radius: 50%; background: white; }
-.bubble em { position: absolute; right: -.9rem; bottom: -.45rem; width: 1.8rem; height: 1.8rem; border: 2px solid white; border-radius: 50%; background: linear-gradient(145deg, #fff, #ff9ed3 75%); }
-@keyframes bubble-wiggle { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-6px) rotate(3deg); } }
-@media (max-width: 680px) { .empty { align-items: flex-start; gap: 1rem; margin-top: 1.2rem; padding: 1.15rem; }.bubble { width: 4rem; height: 4rem; }.bubble i { top: .7rem; left: .8rem; width: .9rem; height: .45rem; }.bubble em { right: -.65rem; bottom: -.25rem; width: 1.2rem; height: 1.2rem; }.grid { grid-template-columns: 1fr; } }
+.feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 19rem); align-items: center; justify-content: space-between; gap: clamp(2rem, 8vw, 7rem); margin-top: 2rem; }
+.copy { max-width: 30rem; }
+.copy h3 { margin: 1rem 0 .55rem; color: var(--ink); font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.08; letter-spacing: -.035em; }
+.copy p { max-width: 26rem; margin: 0; color: var(--muted); font-size: 1.05rem; }
+.badge { display: inline-flex; align-items: center; gap: .4rem; padding: .35rem .7rem; border: 1px solid rgb(114 68 208 / 25%); border-radius: 999px; background: rgb(255 255 255 / 65%); color: #7244d0; font-size: .75rem; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
+.badge span { font-size: 1.1rem; line-height: 1; }
+.videoCard { position: relative; isolation: isolate; width: 100%; aspect-ratio: 9 / 16; margin: 0; overflow: hidden; border: 3px solid #17151e; border-radius: 1.7rem; background: #17151e; box-shadow: 0 0 0 5px #fff, 0 0 0 7px #17151e, 10px 12px 0 rgb(155 114 242 / 25%); color: white; }
+.video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #17151e; }
+.topBar { position: absolute; z-index: 2; top: 0; right: 0; left: 0; display: flex; justify-content: space-between; gap: .5rem; padding: 1rem .9rem; background: linear-gradient(#0009, transparent); font-size: .75rem; font-weight: 800; pointer-events: none; }
+.topBar span:last-child { padding-bottom: .25rem; border-bottom: 2px solid white; }
+.caption { position: absolute; z-index: 2; right: 2.9rem; bottom: 3.7rem; left: .85rem; display: grid; gap: .25rem; text-shadow: 0 1px 4px #000; font-size: .72rem; line-height: 1.35; pointer-events: none; }
+.caption strong { font-size: .78rem; }
+.caption span { max-width: 14rem; }
+@media (max-width: 680px) {
+  .feature { grid-template-columns: 1fr; justify-items: center; gap: 1.7rem; margin-top: 1.4rem; }
+  .copy { max-width: 34rem; justify-self: stretch; }
+  .copy h3 { margin-top: .7rem; }
+  .videoCard { width: min(100%, 19rem); }
+}

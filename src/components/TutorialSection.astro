@@ -1,16 +1,23 @@
 ---
 import styles from './TutorialSection.module.css';
-import VideoCard from './VideoCard.astro';
-import { siteContent } from '../data/siteContent';
-const publishedTutorials = siteContent.tutorials.filter((tutorial) => tutorial.published && tutorial.youtubeUrl);
+import tutorialVideo from '../assets/tutorial.mp4';
 ---
-<section class={styles.section} id="tutoriais" aria-labelledby="tutorial-title">
+<section class={styles.section} id="tutoriais">
   <div class="container">
-    <p class="section-kicker">Quando quiser aprender mais</p>
-    <h2 class="section-heading" id="tutorial-title">Aprenda a criar bolhas incríveis</h2>
-    {publishedTutorials.length > 0 ? <div class={styles.grid}>{publishedTutorials.map((tutorial) => <VideoCard tutorial={tutorial} />)}</div> : <div class={styles.empty}>
-      <span class={styles.bubble} aria-hidden="true"><i></i><b></b><em></em></span>
-      <div><h3>Tem magia borbulhando por aí!</h3><p>{siteContent.tutorialEmpty}</p></div>
-    </div>}
+    <div class={styles.feature}>
+      <div class={styles.copy}>
+        <span class={styles.badge}><span aria-hidden="true">♪</span> tutorial em vídeo</span>
+        <h3>A receita e o passo a passo da brincadeira</h3>
+        <p>Veja como misturar os ingredientes com calma  usar a argola para formar bolhas. Depois, é só preparar a solução e começar a brincar!</p>
+      </div>
+      <figure class={styles.videoCard}>
+        <div class={styles.topBar} aria-hidden="true"><span>Super Bolhas</span><span>Para você</span></div>
+        <video class={styles.video} controls playsinline preload="metadata" aria-label="Vídeo vertical de bolhas de sabão">
+          <source src={tutorialVideo} type="video/mp4" />
+          Seu navegador não consegue reproduzir este vídeo.
+        </video>
+        <figcaption class={styles.caption}><strong>@superbolhas</strong><span>Como preparar a solução e usar a argola 🫧</span></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
