@@ -49,6 +49,7 @@ export const siteContent = {
       'Acrescente o detergente.',
       'Misture devagar, sem fazer espuma.',
       'Deixe descansar por pelo menos 30 minutos.',
+      'Para tocar nas bolhas sem estourá-las com facilidade, coloque uma luva: o contato direto com a pele pode estourá-las.',
     ],
   },
   tutorials: [
@@ -64,11 +65,12 @@ export const siteContent = {
     { title: 'Procure um vento leve', description: 'Um local com brisa suave pode ser mais agradável do que um lugar com vento forte.' },
     { title: 'Fuja do calor muito seco', description: 'Quando puder, escolha um lugar que não esteja excessivamente quente e seco.' },
     { title: 'Cuide da argola', description: 'Manuseie a argola com delicadeza e mantenha o acessório limpo.' },
+    { title: 'Toque nas bolhas com uma luva', description: 'O contato direto com a pele pode estourar as bolhas com facilidade. Use uma luva ao tocá-las.' },
   ] satisfies AdviceItem[],
   troubleshooting: [
-    { title: 'As bolhas estouram muito rápido', description: 'Confira a mistura, respeite o tempo de descanso e tente brincar longe do vento forte.' },
+    { title: 'As bolhas estouram muito rápido', description: 'Evite tocá-las com a pele: o contato direto pode estourá-las. Use uma luva para tocar nas bolhas e confira também a mistura e o tempo de descanso.' },
     { title: 'A mistura está fazendo muita espuma', description: 'Mexa devagar e evite agitar o recipiente com força.' },
-    { title: 'Está difícil formar bolhas', description: 'Confira se a argola está limpa e faça movimentos suaves.' },
+    { title: 'Está difícil formar bolhas', description: 'Confira se a argola está limpa e faça movimentos suaves. Para tocar nas bolhas sem estourá-las com facilidade, use uma luva.' },
   ] satisfies AdviceItem[],
   safety: [
     'A supervisão de um adulto é recomendada durante a preparação e a brincadeira.',
