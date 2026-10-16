@@ -16,7 +16,11 @@
 .troubleHead h3 { max-width: 18rem; margin: 0; color: var(--ink); font-family: var(--font-display); font-size: 1.7rem; line-height: 1.08; letter-spacing: -.035em; }.troubleHead > p:last-child { margin: .45rem 0 0; color: var(--muted); font-size: .92rem; }
 .questions { display: grid; gap: .55rem; align-content: start; }
 .detail { padding: .35rem .85rem; border: 2px solid #b6dedd; border-radius: 1rem .75rem 1rem .75rem; background: var(--white); }
-.detail summary { display: flex; min-height: 2.75rem; align-items: center; color: var(--blue-dark); font-size: .93rem; font-weight: 850; cursor: pointer; }
+.detail summary { display: flex; min-height: 2.75rem; align-items: center; justify-content: space-between; gap: .8rem; color: var(--blue-dark); font-size: .93rem; font-weight: 850; cursor: pointer; list-style: none; }
+.detail summary::-webkit-details-marker { display: none; }
+.detail summary::after { width: .55rem; height: .55rem; flex: 0 0 auto; transform: translateY(-.15rem) rotate(45deg); border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; content: ''; transition: transform .2s ease; }
+.detail[open] summary::after { transform: translateY(.1rem) rotate(225deg); }
+.detail summary:focus-visible { border-radius: .25rem; outline: 3px solid #e6a900; outline-offset: 3px; }
 .detail p { margin: .2rem 0 .6rem; color: var(--muted); font-size: .9rem; }
 @media (max-width: 680px) {
   .tips { grid-template-columns: 1fr; gap: .7rem; margin-top: 1.2rem; padding-inline: .2rem; }
